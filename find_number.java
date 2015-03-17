@@ -60,13 +60,13 @@ public class find_number extends Applet implements ActionListener {
 		
 		else{
 			
-		// About while : We want to generate different numbers on different digit
+		// About while : We want to generate different numbers in different digit
 			while ((random - (random % 10)) / 10 == random % 10) {
 			random = (int) (89 * (Math.random()) + 10);
 			
 		}
 		
-			// About if : User can not choose same numbers on first and second digit
+			// About if : User can not choose same numbers in first and second digit
 		if ((num - (num % 10)) / 10 == num % 10) {
 			g.drawString(
 					"Same number at first and second digits at choosen number",
