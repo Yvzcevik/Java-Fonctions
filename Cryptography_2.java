@@ -4,12 +4,12 @@ import java.awt.event.*;
 
 public class Cryptography_2 extends Applet implements ActionListener {
 
-	int random;
+	int random,flag=0;
 	TextField a, b;
 	Button c, d;
-	String alphabe_encoded = "abcçdefgğhıijklmnoöprsştuüvyz";
+	String alphabet_encoded = "abcçdefgğhıijklmnoöprsştuüvyz";
 	String alphabet_coded = "abcçdefgğhıijklmnoöprsştuüvyz";
-
+	String alphabet_input;
 	public void init() {
 
 		a = new TextField(29);
@@ -19,6 +19,10 @@ public class Cryptography_2 extends Applet implements ActionListener {
 		c = new Button("ENCODE");
 		add(c);
 		c.addActionListener(this);
+		
+		d = new Button("DECODE");
+		add(d);
+		d.addActionListener(this);
 
 		b = new TextField(29);
 		add(b);
@@ -48,9 +52,13 @@ public class Cryptography_2 extends Applet implements ActionListener {
 	}
 
 	public void paint(Graphics g) {
-		System.out.println(alphabet_coded);
-	
-		System.out.println(alphabet_coded.substring(0, 1));
+
+		
+		if (flag==1){
+		g.drawString(alphabet_coded,300,100);
+		g.drawString(alphabet_input,300,200);
+		}
+		
 		
 		
 	}
@@ -62,10 +70,12 @@ public class Cryptography_2 extends Applet implements ActionListener {
 		String s = e.getActionCommand();
 		if (s.equals("ENCODE")) {
 
-			
-			
+			alphabet_input = a.getText();
+			flag=1;
 			repaint();
 		}
+		
+		
 
 	}
 }
