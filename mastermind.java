@@ -87,7 +87,7 @@ public class mastermind extends Applet implements ActionListener {
 		
 	//About this if : We are now checking if user's input include same number	
 		
-		if(same_num==4)
+		if(same_num==4 && Arraynum[3] != 0)
 		{
 		
 			for (int i = 0; i <= 3; i++) {
@@ -121,7 +121,7 @@ public class mastermind extends Applet implements ActionListener {
 		
 		else{
 			
-			g.drawString("Same numbers in input",200, 200);
+			g.drawString("Same numbers or zero at first digit in input",200, 200);
 			g.drawString("Please choose another number",200, 220);
 		
 		}
