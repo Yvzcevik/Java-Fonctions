@@ -93,19 +93,27 @@ public class Cryptography_2 extends Applet implements ActionListener {
 		if (flag == 1) {
 			
 			alphabet_input_encoded = MAGIC(alphabet_input);
-			
+			b.setText(alphabet_input_encoded);
 			
 			g.drawString(alphabet, 380, 100);
 			g.drawString(alphabet_encoded, 760, 100);
-			g.drawString(alphabet_input, 380, 200);
-			g.drawString(alphabet_input_encoded, 760, 200);
-			
-
-			
 	
-
+			
 		}
 
+		if(flag==2){
+			
+			
+			
+			alphabet_input = MAGIC_REVERSE(alphabet_input_encoded);
+			a.setText(alphabet_input);
+
+			g.drawString(alphabet, 380, 100);
+			g.drawString(alphabet_encoded, 760, 100);
+		
+		}
+	
+	
 	}
 
 	public void actionPerformed(ActionEvent e)
@@ -120,5 +128,11 @@ public class Cryptography_2 extends Applet implements ActionListener {
 			repaint();
 		}
 
+		if (s.equals("DECODE")) {
+
+			alphabet_input_encoded = b.getText();
+			flag = 2;
+			repaint();
+		}
 	}
 }
